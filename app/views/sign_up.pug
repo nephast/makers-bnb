@@ -1,20 +1,19 @@
 extends layout
 
-h1 New user sign up
-form(action='/users', method='POST')
-  label(for='name')
-    | Full name:
-    input(type='text', name='name', value='<%= @user.name %>')
-  label(for='user_name')
-    | User name:
-    input(type='text', name='user_name', value='<%= @user.user_name %>')
-  label(for='email')
-    | Email:
-    input(type='email', name='email', value='<%= @user.email %>')
-  label(for='password')
-    | Password:
-    input(type='password', name='password')
-  label(for='password_confirmation')
-    | Password confirmation:
-    input(type='password', name='password_confirmation')
-  input(type='submit', value='sign up')
+block content
+
+  h1 New user sign up
+  form(action='/users', method='POST')
+    label(for='name')
+      | Full name:
+      input(type='text', name='name')
+    label(for='email')
+      | Email:
+      input(type='email', name='email')
+    label(for='password')
+      | Password:
+      input(type='password', name='password')
+    label(for='password_confirmation')
+      | Password confirmation:
+      input(type='password', name='password_confirmation')
+    input(type='submit', value='Sign up!')

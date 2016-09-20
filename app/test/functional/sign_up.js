@@ -3,26 +3,39 @@ var app = require('../../app');
 var http = require('http');
 var Browser = require('zombie');
 
+// Browser.localhost('makersbnb.com', 3000);
 
 describe('sign up page', function() {
 
+  // var browser = new Browser();
+
   before(function() {
-    this.server = http.createServer(app).listen(3000);
-    this.browser = new Browser({ site: 'http://localhost:3000'});
+     server = http.createServer(app).listen(3000);
+     browser = new Browser({ site: 'localhost:3000'});
   });
 
   before(function(done) {
-    this.browser.visit('/', done);
+    browser.visit('/users', done);
   });
 
-  it('should be succesful', function() {
-    this.browser.assert.success();
+  before(function() {
+    browser
+      .fill('email', 'ewan@ewan.ewan')
+      .fill('password', 'ewan')
+      .fill('password_confirmation', 'ewan')
+      .fill('name', 'ewan');
+      // .pressButton('Sign up!', done);
+
   });
 
-  it('should show a sign up form');
+  it('should show a sign up form', function() {
+    browser.assert.success();
+  });
+
+
 
   after(function(done) {
-    this.server.close(done);
+    server.close(done);
   });
 
 });
