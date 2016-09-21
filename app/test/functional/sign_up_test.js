@@ -11,38 +11,33 @@ describe('sign up page', function() {
      browser = new Browser({ site: 'localhost:3000'});
   });
 
-    before(function(done) {
-      browser.visit('/users/new', done);
-    });
+  before(function(done) {
+    browser.visit('/users/new', done);
+  });
 
+  before(function(done) {
+    browser.fill('name', 'ewan', done);
+    browser.fill('email', 'ewan@ewan.com', done);
+    browser.fill('password', 'ewan', done);
+    browser.fill('password_confirmation', 'ewan', done);
+    browser.pressButton('Sign up!', done);
+  });
 
-    before(function(done) {
-        browser.fill('name', 'ewan', done);
-        browser.fill('email', 'ewan@ewan.com', done);
-        browser.fill('password', 'ewan', done);
-        browser.fill('password_confirmation', 'ewan', done);
-        browser.pressButton('Sign up!', done);
-    });
+  it('successful sign up redirects to index', function() {
+    browser.assert.url({pathname: '/'});
+  });
 
-    it('should show a sign up form', function() {
-      browser.assert.success();
-    });
-
-    it('form stores user in database', function() {
-      browser.assert.url({pathname: '/'});
-    });
-
-  describe('incorrect sign up', function() {
+  describe('incorrect sign up - no email', function() {
 
     before(function(done) {
       browser.visit('/users/new', done);
     });
 
     before(function(done) {
-        browser.fill('password', 'ewan', done);
-        browser.fill('password_confirmation', 'ewan', done);
-        browser.fill('name', 'ewan', done);
-        browser.pressButton('Sign up!', done);
+      browser.fill('password', 'ewan', done);
+      browser.fill('password_confirmation', 'ewan', done);
+      browser.fill('name', 'ewan', done);
+      browser.pressButton('Sign up!', done);
     });
 
     it('should not sign in without email', function() {
@@ -51,18 +46,18 @@ describe('sign up page', function() {
 
   });
 
-  describe('incorrect sign up', function() {
+  describe('incorrect sign up - email format', function() {
 
     before(function(done) {
       browser.visit('/users/new', done);
     });
 
     before(function(done) {
-        browser.fill('email', 'ewan', done);
-        browser.fill('password', 'ewan', done);
-        browser.fill('password_confirmation', 'ewan', done);
-        browser.fill('name', 'ewan', done);
-        browser.pressButton('Sign up!', done);
+      browser.fill('email', 'ewan', done);
+      browser.fill('password', 'ewan', done);
+      browser.fill('password_confirmation', 'ewan', done);
+      browser.fill('name', 'ewan', done);
+      browser.pressButton('Sign up!', done);
     });
 
     it('should not sign in without correctly formatted email', function() {
@@ -71,19 +66,17 @@ describe('sign up page', function() {
 
   });
 
-
-
-  describe('incorrect sign up', function() {
+  describe('incorrect sign up - no name', function() {
 
     before(function(done) {
       browser.visit('/users/new', done);
     });
 
     before(function(done) {
-        browser.fill('email', 'ewan@ewan.ewan', done);
-        browser.fill('password', 'ewan', done);
-        browser.fill('password_confirmation', 'ewan', done);
-        browser.pressButton('Sign up!', done);
+      browser.fill('email', 'ewan@ewan.ewan', done);
+      browser.fill('password', 'ewan', done);
+      browser.fill('password_confirmation', 'ewan', done);
+      browser.pressButton('Sign up!', done);
     });
 
     it('should not sign in without name', function() {
