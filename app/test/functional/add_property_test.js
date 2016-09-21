@@ -23,7 +23,7 @@ describe('add property page', function() {
     .pressButton('Submit', done);
   });
 
-  it('should a form', function() {
+  it('should render a form', function() {
     browser.assert.success();
   });
 

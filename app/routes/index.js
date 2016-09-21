@@ -4,7 +4,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  models.Property.findAll().then(function(properties) {
+    res.render('index', {
+      title: 'Available Properties',
+      properties: properties,
+    });
+    console.log(properties);
+  });
 });
 
 module.exports = router;
