@@ -36,7 +36,11 @@ describe('add property page', function() {
   });
 
   it('should display listed property', function() {
-    browser.assert.text('p', 'Beautiful flat');
+    browser.assert.text('li', 'Beautiful flat');
+  });
+
+  after(function(done) {
+    server.close(done);
   });
 
 });

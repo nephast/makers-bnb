@@ -3,4 +3,10 @@ extends layout
 block content
   h1= title
   h2= Welcome
-  p #{properties[0].dataValues.Name}
+
+  ul
+    each val in properties
+      li= val.dataValues.Name
+      li= val.dataValues.description
+      li= val.dataValues.price
+      br
