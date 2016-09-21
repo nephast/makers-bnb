@@ -9,10 +9,6 @@ router.get('/', function(req, res, next) {
       title: 'Available Properties',
       properties: properties,
     });
-<<<<<<< HEAD
-=======
-    console.log(properties.length);
->>>>>>> 29989e9dd436c638fd75e7cee30a439650d9b9e8
   });
 });
 
