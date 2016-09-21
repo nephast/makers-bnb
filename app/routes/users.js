@@ -13,7 +13,8 @@ router.get('/new', function(req, res, next) {
 router.post('/', function(req, res, next) {
   models.User.create({ Name: req.body.name,
                        email: req.body.email,
-                       password: models.User.generateHash(req.body.password)})
+                       password: req.body.password,
+                       password_confirmation: req.body.password_confirmation})
   .then(function() {
     res.redirect('/');
   })
