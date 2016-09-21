@@ -34,9 +34,9 @@ describe('sign up page', function() {
     });
 
     before(function(done) {
+      browser.fill('name', 'ewan', done);
       browser.fill('password', 'ewan', done);
       browser.fill('password_confirmation', 'ewan', done);
-      browser.fill('name', 'ewan', done);
       browser.pressButton('Sign up!', done);
     });
 
@@ -53,10 +53,10 @@ describe('sign up page', function() {
     });
 
     before(function(done) {
+      browser.fill('name', 'ewan', done);
       browser.fill('email', 'ewan', done);
       browser.fill('password', 'ewan', done);
       browser.fill('password_confirmation', 'ewan', done);
-      browser.fill('name', 'ewan', done);
       browser.pressButton('Sign up!', done);
     });
 

@@ -1,5 +1,7 @@
 'use strict';
 
+var bcrypt = require('bcrypt');
+
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     Name: {
@@ -22,6 +24,10 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+
+      },
+      generateHash: function(password) {
+        return bcrypt.hashSync(password, 8, null);
       }
     }
   });
