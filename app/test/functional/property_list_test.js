@@ -35,9 +35,9 @@ describe('add property page', function() {
     browser.assert.text('title', 'Available Properties');
   });
 
-  // it('should display listed property', function() {
-  //   browser.assert.text('Beautiful flat');
-  // });
+  it('should display listed property', function() {
+    browser.assert.element('ul');
+  });
 
   after(function(done) {
     server.close(done);
