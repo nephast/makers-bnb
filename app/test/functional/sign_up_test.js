@@ -53,10 +53,17 @@ describe('sign up page', function() {
     });
 
     before(function(done) {
+<<<<<<< HEAD
       browser.fill('name', 'ewan', done);
       browser.fill('email', 'ewan', done);
       browser.fill('password', 'ewan', done);
       browser.fill('password_confirmation', 'ewan', done);
+=======
+      browser.fill('email', 'ewan', done);
+      browser.fill('password', 'ewan', done);
+      browser.fill('password_confirmation', 'ewan', done);
+      browser.fill('name', 'ewan', done);
+>>>>>>> 641e591231a9de5e99adb50d5285a3a8d8981fbf
       browser.pressButton('Sign up!', done);
     });
 
