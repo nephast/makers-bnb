@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
       title: 'Available Properties',
       properties: properties,
     });
-    console.log(properties);
+    console.log(properties.length);
   });
 });
 
