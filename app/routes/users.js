@@ -13,8 +13,14 @@ router.get('/new', function(req, res, next) {
 router.post('/', function(req, res, next) {
   models.User.create({ Name: req.body.name,
                        email: req.body.email,
-                       password: req.body.password});
-  res.redirect('/');
+                       password: req.body.password,
+                       password_confirmation: req.body.password_confirmation})
+  .then(function() {
+    res.redirect('/');
+  })
+  .catch(function(error) {
+    res.redirect('/users/new');
+  });
 });
 
 // router.get('/users/new', function(req, res, next) {

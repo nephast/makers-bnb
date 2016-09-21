@@ -4,11 +4,7 @@ var http = require('http');
 var Browser = require('zombie');
 var models = require('../../models');
 
-// Browser.localhost('makersbnb.com', 3000);
-
-describe('sign up page', function() {
-
-  // var browser = new Browser();
+describe('add property page', function() {
 
   before(function() {
      server = http.createServer(app).listen(3000);
@@ -16,22 +12,22 @@ describe('sign up page', function() {
   });
 
   before(function(done) {
-    browser.visit('/users/new', done);
+    browser.visit('/properties/new', done);
   });
 
   before(function(done) {
-    browser.fill('name', 'laura', done);
-    browser.fill('email', 'ewan@ewan.ewan', done);
-    browser.fill('password', 'ewan', done);
-    browser.fill('password_confirmation', 'ewan', done);
-    browser.pressButton('Sign up!', done);
+    browser
+    .fill('name', 'Beautiful flat')
+    .fill('description', 'close to center')
+    .fill('price', 250)
+    .pressButton('Submit', done);
   });
 
-  it('should show a sign up form', function() {
+  it('should render a form', function() {
     browser.assert.success();
   });
 
-  it('form stores user in database', function() {
+  it('should redirect to home', function() {
     browser.assert.url({pathname: '/'});
   });
 
