@@ -11,9 +11,9 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  models.User.create({ Name: req.params.name,
-                       email: req.params.email,
-                       password: req.params.password});
+  models.User.create({ Name: req.body.name,
+                       email: req.body.email,
+                       password: req.body.password});
   res.redirect('/');
 });
 

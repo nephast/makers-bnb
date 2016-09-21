@@ -20,12 +20,11 @@ describe('sign up page', function() {
   });
 
   before(function(done) {
-    browser
-      .fill('email', 'ewan@ewan.ewan')
-      .fill('password', 'ewan')
-      .fill('password_confirmation', 'ewan')
-      .fill('name', 'ewan')
-      .pressButton('Sign up!', done);
+    browser.fill('name', 'laura', done);
+    browser.fill('email', 'ewan@ewan.ewan', done);
+    browser.fill('password', 'ewan', done);
+    browser.fill('password_confirmation', 'ewan', done);
+    browser.pressButton('Sign up!', done);
   });
 
   it('should show a sign up form', function() {
