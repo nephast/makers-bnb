@@ -28,11 +28,10 @@ describe('add property page', function() {
   });
 
   before(function(done) {
-    browser
-    .fill('name', 'Beautiful flat')
-    .fill('description', 'close to center')
-    .fill('price', 250)
-    .pressButton('Submit', done);
+    browser.fill('name', 'Beautiful flat', done);
+    browser.fill('description', 'close to center', done);
+    browser.fill('price', 250,done);
+    browser.pressButton('Submit', done);
   });
 
   it('should render a form', function() {
