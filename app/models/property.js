@@ -12,6 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Property.belongsTo(models.User);
+        Property.hasMany(models.Booking);
       }
     }
   });

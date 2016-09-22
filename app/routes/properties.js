@@ -18,6 +18,13 @@ router.post('/', function(req, res, next) {
   res.redirect('/');
 });
 
-
+router.get('/:id', function(req, res, next) {
+  models.Property.findById(req.params.id).then(function(property) {
+    res.render('property_booking', {
+      title: 'Property booking',
+      property: property,
+    });
+  });
+});
 
 module.exports = router;
