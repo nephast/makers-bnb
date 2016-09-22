@@ -11,30 +11,18 @@ describe('sign in page', function() {
      browser = new Browser({ site: 'localhost:3000'});
   });
 
-  before(function(done) {
-    browser.visit('/users/new', done);
-  });
-
-  before(function(done) {
-    browser.fill('name', 'ewan', done);
-    browser.fill('email', 'ewan@ewan.ewan', done);
-    browser.fill('password', 'ewan', done);
-    browser.fill('password_confirmation', 'ewan', done);
-    browser.pressButton('Sign up!', done);
-  });
-
   describe('user can sign in', function() {
 
     before(function(done) {
       browser.visit('/sessions/new', done);
     });
 
-    it('sign in is successful', function() {
+    it('visits sign in page', function() {
       browser.assert.success();
     });
 
     before(function(done) {
-      browser.fill('email', 'ewan@ewan1.com', done);
+      browser.fill('email', 'ewan@ewan.ewan', done);
       browser.fill('password', 'ewan', done);
       browser.pressButton('Sign in', done);
     });
