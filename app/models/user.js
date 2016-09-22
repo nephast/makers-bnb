@@ -38,6 +38,18 @@ module.exports = function(sequelize, DataTypes) {
     }
 
   }, {
+    instanceMethods: {
+      authenticate: function(value) {
+        console.log(value);
+        if (bcrypt.compareSync(value, this.password_digest)) {
+          return this;
+        } else {
+          return false;
+        }
+      }
+    }
+
+  }, {
     classMethods: {
       associate: function(models) {
         User.hasMany(models.Property);

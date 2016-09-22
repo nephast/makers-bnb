@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 Please sign in
+  form(action='/sessions', method='POST')
+    label(for='email')
+      | Email:
+      input(type='email', name='email')
+    label(for='password')
+      | Password:
+      input(type='password', name='password')
+    input(type='submit', value='Sign in')
