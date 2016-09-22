@@ -6,8 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     price: DataTypes.INTEGER,
     UserId: {
       type: DataTypes.INTEGER,
-      references: 'Users',
-      referencesKey: 'id'
+      references: {model: 'User', key: 'id'}
     }
   }, {
     classMethods: {
