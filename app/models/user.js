@@ -40,6 +40,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     instanceMethods: {
       authenticate: function(value) {
+        console.log(value);
         if (bcrypt.compareSync(value, this.password_digest)) {
           return this;
         } else {
