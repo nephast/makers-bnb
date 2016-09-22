@@ -3,11 +3,16 @@ module.exports = function(sequelize, DataTypes) {
   var Property = sequelize.define('Property', {
     Name: DataTypes.STRING,
     description: DataTypes.STRING,
-    price: DataTypes.INTEGER
+    price: DataTypes.INTEGER,
+    UserId: {
+      type: DataTypes.INTEGER,
+      references: 'Users',
+      referencesKey: 'id'
+    }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Property.belongsTo(models.User);
       }
     }
   });
