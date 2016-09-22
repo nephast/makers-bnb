@@ -12,6 +12,18 @@ describe('add property page', function() {
   });
 
   before(function(done) {
+    browser.visit('/users/new', done);
+  });
+
+  before(function(done) {
+    browser.fill('name', 'ewan', done);
+    browser.fill('email', 'ewan@ewan.com', done);
+    browser.fill('password', 'ewan', done);
+    browser.fill('password_confirmation', 'ewan', done);
+    browser.pressButton('Sign up!', done);
+  });
+
+  before(function(done) {
     browser.visit('/properties/new', done);
   });
 
