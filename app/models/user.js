@@ -40,16 +40,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
-
+        User.hasMany(models.Property);
       }
-      // generateHash: function(password, callback) {
-      //   return bcrypt.hashSync(password, 8, function(err,hash) {
-      //     if (err) return callback(err);
-      // 		user.set('password_digest', hash);
-      // 		return callback(null, options);
-      //   });
-      // }
+
     }
   });
 

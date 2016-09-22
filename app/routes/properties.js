@@ -13,7 +13,8 @@ router.get('/new', function(req, res, next) {
 router.post('/', function(req, res, next) {
   models.Property.create({ Name: req.body.name,
                        description: req.body.description,
-                       price: req.body.price});
+                       price: req.body.price,
+                       UserId: sess.current_user});
   res.redirect('/');
 });
 
