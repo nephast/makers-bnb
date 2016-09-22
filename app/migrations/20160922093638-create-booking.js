@@ -11,6 +11,12 @@ module.exports = {
       booking_date: {
         type: Sequelize.DATE
       },
+      UserId: {
+        type: Sequelize.INTEGER
+      },
+      PropertyID: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
