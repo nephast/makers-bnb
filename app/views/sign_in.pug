@@ -3,11 +3,15 @@ extends layout
 block content
 
   h1 Please sign in
-  form(action='/sessions', method='POST')
-    label(for='email')
-      | Email:
-      input(type='email', name='email')
-    label(for='password')
-      | Password:
-      input(type='password', name='password')
-    input(type='submit', value='Sign in')
+
+  form.form-horizontal(action='/sessions', method='POST')
+    .form-group
+      .col-sm-5
+        input.form-control(name='email', type='email', placeholder='Email')
+    .form-group
+      .col-sm-5
+        input.form-control(name='password', type='password', placeholder='Password')
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Sign in
