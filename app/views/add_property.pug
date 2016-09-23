@@ -7,14 +7,16 @@ block content
 
   else
     h1 Add a new property
-    form(action='/properties', method='POST')
-      label(for='name')
-        | Property name:
-        input(type='text', name='name')
-      label(for='description')
-        | Description:
-        input(type='text', name='description')
-      label(for='price')
-        | Price per night:
-        input(type='number', name='price')
-      input(type='submit', value='Submit')
+    form.form-horizontal(action='/properties', method='POST')
+      .form-group
+        .col-sm-3
+          input.form-control(type='text', name='name', placeholder='Property Name')
+      .form-group
+        .col-sm-3
+          input.form-control(type='text', name='description', placeholder='Description')
+      .form-group
+        .col-sm-3
+          input.form-control(type='number', name='price', placeholder='Price per night')
+      .form-group
+        .col-sm-offset-1.col-sm-1
+          button.btn.btn-default(type='submit') Submit!
