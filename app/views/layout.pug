@@ -7,18 +7,32 @@ html
 
 
   body
-    if sess === undefined
-      .buttons
-        form(action='/sessions/new' method='get')
-          input#button(type='submit', value='Sign in')
-        form(action='/users/new' method='get')
-          input#button(type='submit', value='Sign up')
 
-    else
-      .buttons
-        form(action='/sessions/end', method='post')
-          input#button(type='submit', value='Log out')
-        form(action='/properties/new', method='get')
-          input#propbutton(type='submit', value='Add property')
+    nav.navbar.navbar-default
 
-    block content
+        ul.nav.nav-pills
+
+          li(role='presentation')
+            form(action='/' method='get')
+              button.btn.navbar-btn.navbar-left(type='submit') Home
+
+          if sess === undefined
+            li(role='presentation')
+              form(action='/sessions/new' method='get')
+                button.btn.navbar-btn(type='submit') Sign in
+            li(role='presentation')
+              form(action='/users/new' method='get')
+                button.btn.navbar-btn(type='submit') Sign up
+
+          else
+
+            li(role='presentation')
+              form(action='/sessions/end', method='post')
+                button.btn.navbar-btn(type='submit') Log out
+            li(role='presentation')
+              form(action='/properties/new', method='get')
+                button.btn.navbar-btn(type='submit') Add property
+
+    .container
+
+      block content
