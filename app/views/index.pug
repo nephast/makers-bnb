@@ -4,13 +4,11 @@ block content
   h1= title
   h2= Welcome
 
-  ul
+  .container
     each val in properties
-      li= val.dataValues.Name + ' '
-      li= val.dataValues.description + ' '
-      li= val.dataValues.price + ' '
-
-      a(href="properties/" + val.dataValues.id) view property
-
-
-      br
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title= val.dataValues.Name + " - £" + val.dataValues.price + " per night"
+        .panel-body
+          p= val.dataValues.description
+          a(href="properties/" + val.dataValues.id) view property
