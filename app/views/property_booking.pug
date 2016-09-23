@@ -11,3 +11,9 @@ block content
   h2 Price
 
   p= property.dataValues.price
+
+  form(action='/bookings', method='post')
+    select(name='dates')
+      option(value='date1', selected='') 23/09/16
+      option(value='date2') 24/09/16
+    input(type='submit', value='Book')

@@ -18,12 +18,11 @@ describe('making a booking', function() {
   it('visits property page', function() {
     browser.assert.success();
   });
-  
+
   describe('user can book 1 night at a property', function() {
 
-
     before(function(done) {
-      browser.select('date', '23/09/16', done);
+      browser.select('dates', 'date1', done);
       browser.pressButton('Book',done);
     });
 
