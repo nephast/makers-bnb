@@ -4,10 +4,10 @@ var router = express.Router();
 
 
 router.post('/', function(req, res, next) {
-  // models.Property.create({ Name: req.body.name,
-  //                      description: req.body.description,
-  //                      price: req.body.price,
-  //                      UserId: sess.current_user});
+  console.log(req.body.dates);
+  models.Booking.create({ booking_date: req.body.dates,
+                          UserId: sess.current_user,
+                          PropertyID: req.body.prop_id});
   res.redirect('/');
 });
 

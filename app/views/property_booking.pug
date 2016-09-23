@@ -13,7 +13,8 @@ block content
   p= property.dataValues.price
 
   form(action='/bookings', method='post')
+    input(type='hidden', name='prop_id' value= property.dataValues.id)
     select(name='dates')
-      option(value='date1', selected='') 23/09/16
-      option(value='date2') 24/09/16
+      option(value='2016-09-23', selected='') 23/09/16
+      option(value='2016-09-24') 24/09/16
     input(type='submit', value='Book')
