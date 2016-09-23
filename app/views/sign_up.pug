@@ -2,18 +2,20 @@ extends layout
 
 block content
 
-  h1 New user sign up
-  form(action='/users', method='POST')
-    label(for='name')
-      | Full name:
-      input(type='text', name='name')
-    label(for='email')
-      | Email:
-      input(type='email', name='email')
-    label(for='password')
-      | Password:
-      input(type='password', name='password')
-    label(for='password_confirmation')
-      | Password confirmation:
-      input(type='password', name='password_confirmation')
-    input(type='submit', value='Sign up!')
+  h1 Sign up!
+  form.form-horizontal(action='/users', method='POST')
+    .form-group
+      .col-sm-3
+        input.form-control(type='text', name='name', placeholder='Full Name')
+    .form-group
+      .col-sm-3
+        input.form-control(type='email', name='email', placeholder='Email Address')
+    .form-group
+      .col-sm-3
+        input.form-control(type='password', name='password', placeholder='Password')
+    .form-group
+      .col-sm-3
+        input.form-control(type='password', name='password_confirmation', placeholder='Confirm password')
+    .form-group
+      .col-sm-offset-1.col-sm-1
+        button.btn.btn-default(type='submit') Sign up!
