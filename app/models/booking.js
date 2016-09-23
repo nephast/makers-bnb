@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       references: {model: 'User', key: 'id'}
     },
-    PropertyId: {
+    PropertyID: {
       type: DataTypes.INTEGER,
       references: {model: 'Property', key: 'id'}
     }
