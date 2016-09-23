@@ -22,14 +22,13 @@ describe('making a booking', function() {
   describe('user can book 1 night at a property', function() {
 
     before(function(done) {
-      browser.select('dates', '2016-09-23', done);
+      browser.fill('dates', '2016-09-23', done);
       browser.pressButton('Book',done);
     });
 
     it('can select date', function() {
       browser.assert.success();
     });
-
   });
 
   after(function(done) {
