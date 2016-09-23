@@ -19,7 +19,6 @@ router.post('/', function(req, res, next) {
     .then(function(user){
       if (bcrypt.compareSync(req.body.password, user.dataValues.password_digest)) {
         sess.current_user = user.dataValues.id;
-        console.log(sess);
         res.redirect('/');
       } else {
         res.redirect('/sessions/new');
@@ -28,6 +27,11 @@ router.post('/', function(req, res, next) {
     .catch(function(error){
       res.redirect('/users/new');
     });
+});
+
+router.post('/end', function(req, res, next) {
+  sess = undefined;
+  res.redirect('/sessions/new');
 });
 
 module.exports = router;
