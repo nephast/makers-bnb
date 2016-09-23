@@ -22,7 +22,7 @@ describe('sign in page', function() {
     });
 
     before(function(done) {
-      browser.fill('email', 'ewan@ewan.ewan', done);
+      browser.fill('email', 'ewan@ewan.com', done);
       browser.fill('password', 'ewan', done);
       browser.pressButton('Sign in', done);
     });
