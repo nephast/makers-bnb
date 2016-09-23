@@ -7,7 +7,6 @@ router.get('/new', function(req, res, next) {
   res.render('add_property', {
     title: "Add property"
   });
-  // res.send('respond with a resource');
 });
 
 router.post('/', function(req, res, next) {

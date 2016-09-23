@@ -18,6 +18,7 @@ html
       .buttons
         form(action='/sessions/end', method='post')
           input#button(type='submit', value='Log out')
-
+        form(action='/properties/new', method='get')
+          input#propbutton(type='submit', value='Add property')
 
     block content

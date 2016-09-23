@@ -2,15 +2,19 @@ extends layout
 
 block content
 
-  h1 Add a new property
-  form(action='/properties', method='POST')
-    label(for='name')
-      | Property name:
-      input(type='text', name='name')
-    label(for='description')
-      | Description:
-      input(type='text', name='description')
-    label(for='price')
-      | Price per night:
-      input(type='number', name='price')
-    input(type='submit', value='Submit')
+  if sess === undefined
+    h1 ¯\_(ツ)_/¯
+
+  else
+    h1 Add a new property
+    form(action='/properties', method='POST')
+      label(for='name')
+        | Property name:
+        input(type='text', name='name')
+      label(for='description')
+        | Description:
+        input(type='text', name='description')
+      label(for='price')
+        | Price per night:
+        input(type='number', name='price')
+      input(type='submit', value='Submit')
