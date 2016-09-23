@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
 
 router.post('/end', function(req, res, next) {
   sess = undefined;
-  res.redirect('/sessions/new');
+  res.redirect('/');
 });
 
 module.exports = router;
