@@ -1,18 +1,19 @@
 extends layout
 
 block content
+  .container
+   .panel.panel-default
+    .panel-heading
+      h2= property.dataValues.Name
+      .panel-body
 
-  h1= property.dataValues.Name
+        p= property.dataValues.description
 
-  h2 Description
+        h5 Price Per Night
 
-  p= property.dataValues.description
+        p= property.dataValues.price
 
-  h2 Price
-
-  p= property.dataValues.price
-
-  form(action='/bookings', method='post')
-    input(type='hidden', name='prop_id' value= property.dataValues.id)
-    input(type='date', name='dates', min="2016-09-01")
-    input(type='submit', value='Book')
+        form(action='/bookings', method='post')
+          input(type='hidden', name='prop_id' value= property.dataValues.id)
+          input(type='date', name='dates', min="2016-09-01")
+          input(class='.btn btn-primary' type='submit', value='Book')
