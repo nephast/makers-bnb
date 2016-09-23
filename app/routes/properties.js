@@ -24,7 +24,6 @@ router.get('/:id', function(req, res, next) {
       title: 'Property booking',
       property: property,
     });
-    console.log(sess.current_user);
   });
 });
 

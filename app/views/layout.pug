@@ -5,4 +5,9 @@ html
 
 
   body
+    if sess !== undefined
+      .buttons
+        form(action='/sessions/end', method='post')
+          input#button(type='submit', value='Log out')
+
     block content
